@@ -1,0 +1,24 @@
+// George Davis
+// testvectors for the lab2_gd_tb.sv testbench file
+// tests the A seven segment display
+// gdavis@hmc.edu
+// 9/4/2025
+
+// sA sB control seg led
+
+0000_xxxx_10_1000000_xxxx
+0001_xxxx_10_1111001_xxxx
+0010_xxxx_10_0100100_xxxx
+0011_xxxx_10_0110000_xxxx
+0100_xxxx_10_0011001_xxxx
+0101_xxxx_10_0010010_xxxx
+0110_xxxx_10_0000010_xxxx
+0111_xxxx_10_1111000_xxxx
+1000_xxxx_10_0000000_xxxx
+1001_xxxx_10_0011000_xxxx
+1010_xxxx_10_0001000_xxxx
+1011_xxxx_10_0000011_xxxx
+1100_xxxx_10_1000110_xxxx
+1101_xxxx_10_0100001_xxxx
+1110_xxxx_10_0000110_xxxx
+1111_xxxx_10_0001110_xxxx

@@ -1,0 +1,74 @@
+C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv {0 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module switch_mux
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv(17): near "logic": syntax error, unexpected "SystemVerilog keyword 'logic'", expecting ';'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv(52): (vlog-2730) Undefined variable: 'in'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv(52): (vlog-2730) Undefined variable: 'out_expected'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv(59): (vlog-2730) Undefined variable: 'out'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux_tb.sv(59): (vlog-2730) Undefined variable: 'out_expected'.
+
+} {4.0 9.0} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/led_adder.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/led_adder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module led_adder
+
+Top level modules:
+	led_adder
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv {0 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module lab2_gd_tb
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(43): (vlog-2730) Undefined variable: 'errors_A'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(44): (vlog-2730) Undefined variable: 'errors_B'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(45): (vlog-2730) Undefined variable: 'errors_led'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(54): (vlog-2730) Undefined variable: 'counter'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(56): (vlog-2730) Undefined variable: 'enable'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(64): (vlog-2730) Undefined variable: 'enable'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(68): (vlog-2730) Undefined variable: 'led_expected'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(74): (vlog-2730) Undefined variable: 'led_expected'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(96): (vlog-2730) Undefined variable: 'led_expected'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(102): (vlog-2730) Undefined variable: 'led_expected'.
+** Error (suppressible): C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(119): (vlog-2720) A generate begin/end pair has been found outside of generate construct.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(119): 'sA' is an invalid type in Generate loop. Must be a genvar.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(119): near "/": syntax error, unexpected '/'.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/lab2_gd_tb.sv(120): (vlog-13205) Syntax error found in the scope following 'sA'. Is there a missing '::'?
+
+} {4.0 14.0 15.0 18.0} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module two_bit_demux
+
+Top level modules:
+	two_bit_demux
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/seven_seg_disp.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/seven_seg_disp.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_disp
+
+Top level modules:
+	seven_seg_disp
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv {0 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module sv_tb_template
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(17): near "output": syntax error, unexpected output, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(25): near "output": syntax error, unexpected output, expecting ')'.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(51): near "output": syntax error, unexpected output.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(58): near "output": syntax error, unexpected output.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(61): near "output": syntax error, unexpected output.
+** Error: (vlog-13069) C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(65): near "=": syntax error, unexpected '='.
+** Error: C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/two_bit_demux_tb.sv(65): (vlog-13205) Syntax error found in the scope following 'vectornum'. Is there a missing '::'?
+
+} {4.0 11.0} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/switch_mux.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module switch_mux
+
+Top level modules:
+	switch_mux
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/seven_seg_disp_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab-2/fpga/src/seven_seg_disp_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_disp_tb
+
+Top level modules:
+	seven_seg_disp_tb
+
+} {} {}}
