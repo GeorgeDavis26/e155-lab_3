@@ -4,10 +4,12 @@
 // 9/10/2025
 
 module shifter (
-    input   [3:0]   col_keys,
-    output  [3:0]   col_keys_shifted
+    input   logic 	[3:0]   col_keys,
+    output	logic	[3:0]   col_keys_shifted
 );
-    if      (col_keys == 4'b1000) assign col_keys_shifted = 4'b0001;
-    else    assign col_keys_shifted = col_keys << 1;
 
+always_comb begin
+    if      (col_keys == 4'b1000) col_keys_shifted = 4'b0001;
+    else     col_keys_shifted = col_keys << 1;
+end
 endmodule

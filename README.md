@@ -1,5 +1,5 @@
-# E155 Lab 2
+# E155 Lab 3
 
-Multiplexed 7-Segment Display
+Keypad Scanner
 
-This lab focuses on implementing a time-multiplexing scheme to drive two seven-segment displays with a single set of FPGA I/O pins Building a simple pnp transistor circuit to drive large currents from the FPGA pins. Modular verilog architecture.
+This lab focuses on implementing A keypad scanner and the same time time-multiplexing scheme to drive two seven-segment displays with a single set of FPGA I/O pins used in lab 2. Building a simple pnp transistor circuit to drive large currents from the FPGA pins and Modular verilog architecture.

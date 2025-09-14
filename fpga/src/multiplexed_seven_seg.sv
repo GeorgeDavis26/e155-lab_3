@@ -9,7 +9,7 @@ module multiplexed_seven_seg (
 	input	logic   [3:0]   sA,
     input   logic   [3:0]   sB,
     output  logic   [1:0]   control,
-	output	logic   [6:0]   seg,
+	output	logic   [6:0]   seg
 );
 
     //creating enable, multiplexed wire s, along with the counting variable used in the divider

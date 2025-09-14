@@ -4,18 +4,18 @@
 // george davis gdavis@hmc.edu
 // 9/10/2025
 
-module row_col_decoder(
-    input   logic           clk,
+module keypad_decoder(
     input   logic   [3:0]   row_keys, col_keys,
     output  logic   [3:0]   hex_R
-)
+);
 
     //when a key is pressed the column is shorted to the row and current flows
     //detect which key is being pressed by setting a row to logical LOW and all columns to logical HIGH
     //when a column is forced low by the short, that key must have been pressed.
 
-    always_comb begin
-        casez (row_keys)
+    always_comb 
+	begin
+        case (row_keys)
             4'b0001:    case(col_keys)
                             4'b0001:    hex_R = 4'hA;
                             4'b0010:    hex_R = 4'h0;
@@ -44,7 +44,7 @@ module row_col_decoder(
                             4'b1000:    hex_R = 4'hC;
                             default:    hex_R = 4'h0;
                         endcase
-            default:    hex_R = h'h0;
+            default:    hex_R = 4'h0;
         endcase
     end
 endmodule
