@@ -19,7 +19,7 @@ module shifter_tb;
 	//32 bit vectornum indicates the number of test vectors applied
 	//32 bit errors indicates number of errros found
 	logic	[31:0]	vectornum, errors;
-	logic	[5:0]	testvectors[10000:0]; //change bit length to match DUT input/output
+	logic	[7:0]	testvectors[10000:0];
 	
 	//instatiate device to be tested
 	shifter dut(col_keys, col_keys_shifted);
@@ -33,7 +33,7 @@ module shifter_tb;
 	
 	initial
 		begin
-			$readmemb("shifter.tv", testvectors); //change to DUT .tv file
+			$readmemb("shifter.tv", testvectors);
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;
@@ -48,7 +48,7 @@ module shifter_tb;
 			begin
 				#1;
 				//loads test vectors into inputs and expected outputs
-				{col_keys, col_keys_shifted_expected} = testvectors[vectornum]; //change to DUT input/output
+				{col_keys, col_keys_shifted_expected} = testvectors[vectornum];
 			end
 	
     
@@ -64,7 +64,7 @@ module shifter_tb;
 
 				vectornum = vectornum + 1;
 				
-				if (testvectors[vectornum] == 8'bX) begin   //change bit length to DUT input/output combined
+				if (testvectors[vectornum] == 8'bX) begin 
 					$display("%d tests completed with %d errors", vectornum, errors);
 					$stop;
 				end
