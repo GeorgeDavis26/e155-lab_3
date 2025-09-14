@@ -1,5 +1,5 @@
 // lab3_gd_top.sv
-// top level module for the lab 3 keypad decoder and multiplexing dual  hexidecimal display
+// top level module for the lab 3 keypad decoder and multiplexing dual hexidecimal display
 // george davis gdavis@hmc.edu
 // 9/10/2025
 

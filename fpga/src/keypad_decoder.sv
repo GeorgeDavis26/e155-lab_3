@@ -1,6 +1,6 @@
 // keypad_decoder.sv
 // submodule of lab3_gd top level module
-// contains the logic used to decode the 8 input pins connected to the 16 
+// contains the logic used to decode the 8 input pins connected to the 16 push buttons
 // george davis gdavis@hmc.edu
 // 9/10/2025
 

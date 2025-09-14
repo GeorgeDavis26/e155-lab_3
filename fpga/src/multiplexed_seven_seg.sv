@@ -1,5 +1,6 @@
-// lab2_gd.sv
-// top level module for the lab 2 dual seven segment display functionality in System Verilog
+// multiplexed_seven_seg.sv
+// Dual seven segment display functionality in System Verilog
+// adapted from the top level module for the lab 2
 // george davis gdavis@hmc.edu
 // 9/4/2025
 
