@@ -2,7 +2,7 @@
 <RadiantProject version="4.2" radiant="2024.2.0.3.0" title="lab3_gd" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" family_int="ice40tp" device_int="itpa08" package_int="SG48" operation_int="IND" speed_int="6" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
-        <Options/>
+        <Options def_top="lab3_gd_top"/>
         <Source name="../debouncer.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
@@ -10,7 +10,7 @@
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="../lab3_gd_top.sv" type="Verilog" type_short="Verilog">
-            <Options VerilogStandard="System Verilog"/>
+            <Options VerilogStandard="System Verilog" top_module="lab3_gd_top"/>
         </Source>
         <Source name="../multiplexed_seven_seg.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
@@ -25,6 +25,9 @@
             <Options VerilogStandard="System Verilog"/>
         </Source>
         <Source name="../two_bit_demux.sv" type="Verilog" type_short="Verilog">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="../sync.sv" type="Verilog" type_short="Verilog">
             <Options VerilogStandard="System Verilog"/>
         </Source>
     </Implementation>
