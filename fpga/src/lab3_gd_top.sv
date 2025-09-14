@@ -43,9 +43,7 @@ module lab3_gd_top (
                         nextstate = CHECK; //go to check state to ensure debouncing successed
                     end
                     else nextstate = WAIT;
-            CHECK:  if (q_row_keys == pressed_row) begin //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
-                        nextstate = DRIVE; //go to drive state
-                    end
+            CHECK:  if (q_row_keys == pressed_row) nextstate = DRIVE; //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
                     else nextstate = IDLE; //go back to idle if the debouncer failed
             DRIVE:  begin 
 					hex_L = hex_R;

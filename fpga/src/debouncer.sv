@@ -10,7 +10,7 @@ module debouncer (
 	
 	logic	[21:0]	counter = 0;
 
-	always_ff @(posedge clk, reset)
+	always_ff @(posedge clk, posedge reset)
 	begin
 		if (reset) counter = 0;
 		else if(counter == 'd2400000) begin //flips on after 20 ms

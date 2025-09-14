@@ -1,12 +1,12 @@
 // sync.sv
 // syncronizer module via double flip flop
-// taken from Professor Josh Brake's E155 lecture notes
+// adapted from Professor Josh Brake's E155 lecture notes
 // 9/13/2025
 
 module sync(
-    input logic clk,
-    input logic d,
-    output logic q
+    input 	logic 		clk,
+    input 	logic [3:0] d,
+    output 	logic [3:0]	q
 );
 
 logic n1;
