@@ -512,3 +512,46 @@ vsim -gui -voptargs=+acc work.scanner_fsm_tb
 # Compile of scanner_fsm_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -gui -voptargs=+acc work.shifter_tb
+# vsim -gui -voptargs="+acc" work.shifter_tb 
+# Start time: 15:57:23 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.shifter_tb(fast)
+# Loading work.shifter(fast)
+add wave -position end  sim:/shifter_tb/clk
+add wave -position end  sim:/shifter_tb/reset
+add wave -position end  sim:/shifter_tb/col_keys
+add wave -position end  sim:/shifter_tb/col_keys_shifted
+add wave -position end  sim:/shifter_tb/col_keys_shifted_expected
+add wave -position end  sim:/shifter_tb/vectornum
+add wave -position end  sim:/shifter_tb/errors
+add wave -position end  sim:/shifter_tb/testvectors
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlft4k02k1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4k02k1
+run 10000
+# ** Warning: (vsim-7) Failed to open readmem file "shifter.tv" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/shifter_tb.sv(36)
+#    Time: 0 ps  Iteration: 0  Instance: /shifter_tb
+# Load canceled
+vsim -gui -voptargs=+acc work.scanner_fsm_tb
+# End time: 15:58:40 on Sep 19,2025, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 6
+# vsim -gui -voptargs="+acc" work.scanner_fsm_tb 
+# Start time: 15:58:40 on Sep 19,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.scanner_fsm_tb(fast)
+# Loading work.scanner_fsm(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/scanner_fsm_tb/dut/enable', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /scanner_fsm_tb/dut File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv Line: 14
+# Error loading design
+# End time: 15:59:04 on Sep 19,2025, Elapsed time: 0:00:24
+# Errors: 1, Warnings: 2

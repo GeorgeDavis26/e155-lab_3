@@ -1,17 +1,11 @@
 m255
 K4
 z2
-Z0 !s12c _opt1
+Z0 !s12c _opt2
 Z1 !s99 nomlopt
-Z2 !s12c _opt2
-R1
-R2
+Z2 !s12c _opt1
 R1
 R0
-R1
-R2
-R1
-R2
 R1
 R0
 R1
@@ -21,7 +15,15 @@ R0
 R1
 R0
 R1
+R2
+R1
 R0
+R1
+R2
+R1
+R2
+R1
+R2
 R1
 Z3 !s12c _opt
 R1
@@ -66,11 +68,12 @@ R10
 R11
 n@_opt1
 R12
+R4
 T_opt2
-!s110 1758322421
-VAImR<IDeGHEcM<Y6nnOA<2
+!s110 1758322721
+V]hKz__9VEjJDoH@1Ie6^k1
 04 14 4 work scanner_fsm_tb fast 0
-=1-00be43eaec8a-68cddef5-1ab-45b8
+=1-00be43eaec8a-68cde021-9-8ebc
 R1
 !s12f OEM25U3 
 R7
@@ -80,7 +83,6 @@ R10
 R11
 n@_opt2
 R12
-R4
 vdebouncer
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer.sv
 Z13 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92

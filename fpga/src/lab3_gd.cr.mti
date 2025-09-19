@@ -5,4 +5,11 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	scanner_fsm
 
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module scanner_fsm_tb
+
+Top level modules:
+	scanner_fsm_tb
+
 } {} {}}
