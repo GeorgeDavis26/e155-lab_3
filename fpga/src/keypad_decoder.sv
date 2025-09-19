@@ -14,39 +14,39 @@ module keypad_decoder(
     //when a column is forced low by the short, that key must have been pressed.
 
     always_comb 
-	begin
-        case (row_keys)
-            4'b0001:    case(col_keys)
-                            4'b0001:    hex_R = 4'hA;
-                            4'b0010:    hex_R = 4'h0;
-                            4'b0100:    hex_R = 4'hB;
-                            4'b1000:    hex_R = 4'hF;
-                            default:    hex_R = 4'h0;
-                        endcase
-            4'b0010:    case(col_keys)
-                            4'b0001:    hex_R = 4'h7;
-                            4'b0010:    hex_R = 4'h8;
-                            4'b0100:    hex_R = 4'h9;
-                            4'b1000:    hex_R = 4'hE;
-                            default:    hex_R = 4'h0;
-                        endcase
-            4'b0100:    case(col_keys)
-                            4'b0001:    hex_R = 4'h4;
-                            4'b0010:    hex_R = 4'h5;
-                            4'b0100:    hex_R = 4'h6;
-                            4'b1000:    hex_R = 4'hD;
-                            default:    hex_R = 4'h0;
-                        endcase
-            4'b1000:    case(col_keys)
-                            4'b0001:    hex_R = 4'h1;
-                            4'b0010:    hex_R = 4'h2;
-                            4'b0100:    hex_R = 4'h3;
-                            4'b1000:    hex_R = 4'hC;
-                            default:    hex_R = 4'h0;
-                        endcase
-            default:    hex_R = 4'h0;
-        endcase
-    end
+        begin
+            case (row_keys)
+                4'b0001:    case(col_keys)
+                                4'b0001:    hex_R = 4'hA;
+                                4'b0010:    hex_R = 4'h0;
+                                4'b0100:    hex_R = 4'hB;
+                                4'b1000:    hex_R = 4'hF;
+                                default:    hex_R = 4'h0;
+                            endcase
+                4'b0010:    case(col_keys)
+                                4'b0001:    hex_R = 4'h7;
+                                4'b0010:    hex_R = 4'h8;
+                                4'b0100:    hex_R = 4'h9;
+                                4'b1000:    hex_R = 4'hE;
+                                default:    hex_R = 4'h0;
+                            endcase
+                4'b0100:    case(col_keys)
+                                4'b0001:    hex_R = 4'h4;
+                                4'b0010:    hex_R = 4'h5;
+                                4'b0100:    hex_R = 4'h6;
+                                4'b1000:    hex_R = 4'hD;
+                                default:    hex_R = 4'h0;
+                            endcase
+                4'b1000:    case(col_keys)
+                                4'b0001:    hex_R = 4'h1;
+                                4'b0010:    hex_R = 4'h2;
+                                4'b0100:    hex_R = 4'h3;
+                                4'b1000:    hex_R = 4'hC;
+                                default:    hex_R = 4'h0;
+                            endcase
+                default:    hex_R = 4'h0;
+            endcase
+        end
 endmodule
 
 /*

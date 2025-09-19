@@ -1,28 +1,28 @@
-// shifter.sv
-// testbench file for the shifter module
+// two_bit_demux.sv
+// testbench file for two_bit_demultiplexer
 // george davis gdavis@hmc.edu
-// 9/13/2025
+// 8/31/2025
 
 //Referenced E85 Lab_2 testbench provided tutorial by david harris to make this file
 
 	`timescale 1ps/1ps //timescale <time_unit>/<time_precision>
 
-module shifter_tb;
+module two_bit_demux; //change to DUT module name
 	
 	logic	clk;
 	logic	reset;
 	
 	//input/output variables
-	logic	[3:0] col_keys;
-	logic   [3:0] col_keys_shifted, col_keys_shifted_expected;
+	logic		  enable;
+	logic   [1:0] control, control_expected;
 
 	//32 bit vectornum indicates the number of test vectors applied
 	//32 bit errors indicates number of errros found
 	logic	[31:0]	vectornum, errors;
-	logic	[7:0]	testvectors[10000:0];
+	logic	[2:0]	testvectors[10000:0];
 	
 	//instatiate device to be tested
-	shifter dut(col_keys, col_keys_shifted);
+	two_bit_demux dut(enable, control);
 
     //generates clock 
 	always
@@ -33,7 +33,7 @@ module shifter_tb;
 	
 	initial
 		begin
-			$readmemb("shifter.tv", testvectors);
+			$readmemb("two_bit_demux.tv", testvectors);
 			
 			//Initialize 0 vectors tested and errors
 			vectornum = 0;
@@ -48,23 +48,23 @@ module shifter_tb;
 			begin
 				#1;
 				//loads test vectors into inputs and expected outputs
-				{col_keys, col_keys_shifted_expected} = testvectors[vectornum];
+				{control, control_expected} = testvectors[vectornum];
 			end
 	
     
 		always @(negedge clk)
 			if(~reset) begin
 				//detect error by comparing actual output expected output from testvectors
-				if (col_keys_shifted != col_keys_shifted_expected) begin
+				if (control != control_expected) begin
 					//display input/outputs that generated the error
-					$display("Error: inputs = %b", {col_keys});
-					$display(" outputs = %b", {col_keys_shifted});
+					$display("Error: inputs = %b", {enable});
+					$display(" outputs = %b", {output});
 					errors = errors + 1;
 				end
 
 				vectornum = vectornum + 1;
 				
-				if (testvectors[vectornum] == 8'bX) begin 
+				if (testvectors[vectornum] == 3'bX) begin
 					$display("%d tests completed with %d errors", vectornum, errors);
 					$stop;
 				end
