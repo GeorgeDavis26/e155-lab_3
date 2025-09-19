@@ -54,15 +54,15 @@ module keypad_decoder_tb;
 				//detect error by comparing actual output expected output from testvectors
 				if (hex_R != hex_R_expected) begin
 					//display input/outputs that generated the error
-					$display("Error: inputs = %b", {row_keys, col_keys});
-					$display(" outputs = %b", {hex_R});
+					$error("Error: inputs = %b", {row_keys, col_keys});
+					$error(" outputs = %b", {hex_R});
 					errors = errors + 1;
 				end
 
 				vectornum = vectornum + 1;
 				
 				if (testvectors[vectornum] == 12'bX) begin 
-					$display("%d tests completed with %d errors", vectornum, errors);
+					$error("%d tests completed with %d errors", vectornum, errors);
 					$stop;
 				end
 			end

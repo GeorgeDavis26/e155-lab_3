@@ -4,24 +4,20 @@
 
 module sync_tb;
 
- 	logic 		clk,
- 	logic [3:0] d,
- 	logic [3:0]	q
+ 	logic 		clk;
+ 	logic [3:0] d, q;
 
     sync dut(clk, d, q);
 
-    //generate clock
-    always begin
-        clk <= 1; #5;
-        clk <= 0; #5;
-    end
-
     initial
-        always_ff @(posedge clk) begin
-            #3;          //put d assignemnt outside of the clk cycle
+        begin
             d = 4'b1010; //non-trivial assigment to d to check output 
-            #20;
-            assert(q == d) else $display("Error: async d not copied to q after 2 clock cycles")
+			clk = 0; #5
+			clk = 1; #5;
+			clk = 0; #5;	
+			clk = 1; #5;			
+			clk = 0; #5;		
+            assert(q == d) else $error("Error: async d not copied to q after 2 clock cycles");
             $stop;
         end
 endmodule

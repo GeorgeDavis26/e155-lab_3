@@ -7,7 +7,7 @@
 
 	`timescale 1ps/1ps //timescale <time_unit>/<time_precision>
 
-module two_bit_demux; //change to DUT module name
+module two_bit_demux_tb; //change to DUT module name
 	
 	logic	clk;
 	logic	reset;
@@ -48,7 +48,7 @@ module two_bit_demux; //change to DUT module name
 			begin
 				#1;
 				//loads test vectors into inputs and expected outputs
-				{control, control_expected} = testvectors[vectornum];
+				{enable, control_expected} = testvectors[vectornum];
 			end
 	
     
@@ -56,16 +56,16 @@ module two_bit_demux; //change to DUT module name
 			if(~reset) begin
 				//detect error by comparing actual output expected output from testvectors
 				if (control != control_expected) begin
-					//display input/outputs that generated the error
-					$display("Error: inputs = %b", {enable});
-					$display(" outputs = %b", {output});
+					//error input/outputs that generated the error
+					$error("Error: inputs = %b", {enable});
+					$error(" outputs = %b", {control});
 					errors = errors + 1;
 				end
 
 				vectornum = vectornum + 1;
 				
 				if (testvectors[vectornum] == 3'bX) begin
-					$display("%d tests completed with %d errors", vectornum, errors);
+					$error("%d tests completed with %d errors", vectornum, errors);
 					$stop;
 				end
 			end

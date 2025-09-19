@@ -14,64 +14,501 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # Loading project lab3_gd
-# Compile of shifter.sv was successful.
-# Compile of shifter_tb.sv was successful.
+# Compile of divider.sv was successful.
+# Compile of divider_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
-vsim -gui work.shifter_tb -voptargs=+acc
-# vsim -gui work.shifter_tb -voptargs="+acc" 
-# Start time: 14:43:17 on Sep 14,2025
+vsim -gui work.divider_tb -voptargs=+acc
+# vsim -gui work.divider_tb -voptargs="+acc" 
+# Start time: 15:03:49 on Sep 19,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.shifter_tb(fast)
-# Loading work.shifter(fast)
-add wave -position end  sim:/shifter_tb/clk
-add wave -position end  sim:/shifter_tb/reset
-add wave -position end  sim:/shifter_tb/col_keys
-add wave -position end  sim:/shifter_tb/col_keys_shifted
-add wave -position end  sim:/shifter_tb/col_keys_shifted_expected
-add wave -position end  sim:/shifter_tb/vectornum
-add wave -position end  sim:/shifter_tb/errors
-add wave -position end  sim:/shifter_tb/testvectors
-run 200
-# ** Warning: (vsim-PLI-3406) Too many digits (8) in data on line 6 of file "shifter.tv". (Max is 6.)    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/shifter_tb.sv(36)
-#    Time: 0 ps  Iteration: 0  Instance: /shifter_tb
-wave zoom in
-# {0 ps} {7034 ps}
-wave zoom full
-# {0 ps} {210 ps}
-# Compile of shifter.sv was successful.
-# Compile of shifter_tb.sv was successful.
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/divider_tb/alarm', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 21
+# Error loading design
+# End time: 15:04:13 on Sep 19,2025, Elapsed time: 0:00:24
+# Errors: 1, Warnings: 7
+vsim -gui -voptargs=+acc work.divider_tb
+# vsim -gui -voptargs="+acc" work.divider_tb 
+# Start time: 15:05:46 on Sep 19,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/divider_tb/alarm', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 21
+# Error loading design
+# End time: 15:06:09 on Sep 19,2025, Elapsed time: 0:00:23
+# Errors: 1, Warnings: 1
+vsim -gui -voptargs=+acc work.divider_tb
+# vsim -gui -voptargs="+acc" work.divider_tb 
+# Start time: 15:07:11 on Sep 19,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/divider_tb/alarm', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 21
+# Error loading design
+# End time: 15:07:34 on Sep 19,2025, Elapsed time: 0:00:23
+# Errors: 1, Warnings: 1
+# Compile of divider.sv was successful.
+# Compile of divider_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
-run 200
+vsim -gui -voptargs=+acc work.divider_tb
+# vsim -gui -voptargs="+acc" work.divider_tb 
+# Start time: 15:08:07 on Sep 19,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/divider_tb/alarm', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 21
+# Error loading design
+# End time: 15:08:31 on Sep 19,2025, Elapsed time: 0:00:24
+# Errors: 1, Warnings: 2
+# Compile of divider_tb.sv was successful.
+# Compile of divider.sv was successful.
+# Compile of divider_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.divider_tb
+# vsim -gui -voptargs="+acc" work.divider_tb 
+# Start time: 15:10:27 on Sep 19,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+add wave -position end  sim:/divider_tb/clk
+add wave -position end  sim:/divider_tb/reset
+add wave -position end  sim:/divider_tb/goal
+add wave -position end  sim:/divider_tb/errors
+add wave -position end  sim:/divider_tb/alarm
+add wave -position end  sim:/divider_tb/check
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlftjs2ct5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftjs2ct5
+run 1000
+# ** Error: Tests completed with 00000000000000000000000000000000 errors
+#    Time: 95 ps  Scope: divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 109
+# ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(110)
+#    Time: 95 ps  Iteration: 0  Instance: /divider_tb
+# Break in Module divider_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv line 110
+wave zoom fit
+# unknown or ambiguous subcommand "fit": must be cursor, full, in, last, out, or range
+wave zoom full
+# {0 ps} {100 ps}
+# Compile of divider.sv was successful.
+# Compile of divider_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.shifter_tb(fast)
-# Loading work.shifter(fast)
+# Loading work.divider_tb(fast)
+# Loading work.divider(fast)
+# Warning in wave window restart: (vish-4014) No objects found matching '/divider_tb/check'. 
 run 200
-# Error: inputs = 0010
-#  outputs = 0001
-# Error: inputs = 0100
-#  outputs = 0001
-# Compile of shifter.sv was successful.
-# Compile of shifter_tb.sv was successful.
+# ** Error: Tests completed with 00000000000000000000000000000000 errors
+#    Time: 106 ps  Scope: divider_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv Line: 119
+# ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv(120)
+#    Time: 106 ps  Iteration: 0  Instance: /divider_tb
+# Break in Module divider_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider_tb.sv line 120
+# Compile of keypad_decoder.sv was successful.
+# Compile of keypad_decoder_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
+add wave -position end  sim:/divider_tb/clk
+add wave -position end  sim:/divider_tb/reset
+add wave -position end  sim:/divider_tb/goal
+add wave -position end  sim:/divider_tb/errors
+add wave -position end  sim:/divider_tb/alarm
+run 200
+vsim -gui -voptargs=+acc work.keypad_decoder_tb
+# End time: 15:29:27 on Sep 19,2025, Elapsed time: 0:19:00
+# Errors: 1, Warnings: 6
+# vsim -gui -voptargs="+acc" work.keypad_decoder_tb 
+# Start time: 15:29:27 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.keypad_decoder_tb(fast)
+# Loading work.keypad_decoder(fast)
+add wave -position end  sim:/keypad_decoder_tb/clk
+add wave -position end  sim:/keypad_decoder_tb/reset
+add wave -position end  sim:/keypad_decoder_tb/row_keys
+add wave -position end  sim:/keypad_decoder_tb/col_keys
+add wave -position end  sim:/keypad_decoder_tb/hex_R
+add wave -position end  sim:/keypad_decoder_tb/hex_R_expected
+add wave -position end  sim:/keypad_decoder_tb/vectornum
+add wave -position end  sim:/keypad_decoder_tb/errors
+add wave -position end  sim:/keypad_decoder_tb/testvectors
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlftcmbhzv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcmbhzv
+run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.keypad_decoder_tb(fast)
+# Loading work.keypad_decoder(fast)
+run 1000
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.keypad_decoder_tb(fast)
+# Loading work.keypad_decoder(fast)
+run 300
+wave zoom full
+# {0 ps} {315 ps}
+# Compile of switch_mux.sv was successful.
+# Compile of switch_mux_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.switch_mux_tb
+# End time: 15:33:03 on Sep 19,2025, Elapsed time: 0:03:36
+# Errors: 0, Warnings: 6
+# vsim -gui -voptargs="+acc" work.switch_mux_tb 
+# Start time: 15:33:03 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.switch_mux_tb(fast)
+# Loading work.switch_mux(fast)
+add wave -position end  sim:/switch_mux_tb/clk
+add wave -position end  sim:/switch_mux_tb/reset
+add wave -position end  sim:/switch_mux_tb/enable
+add wave -position end  sim:/switch_mux_tb/sA
+add wave -position end  sim:/switch_mux_tb/sB
+add wave -position end  sim:/switch_mux_tb/a
+add wave -position end  sim:/switch_mux_tb/b
+add wave -position end  sim:/switch_mux_tb/s
+add wave -position end  sim:/switch_mux_tb/errors
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlftvagzm4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvagzm4
+run 200
+# ** Error: Error: inputs = 00000001
+#    Time: 11 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0001
+#    Time: 11 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000001
+#    Time: 16 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 16 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000010
+#    Time: 21 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0010
+#    Time: 21 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000010
+#    Time: 26 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 26 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000011
+#    Time: 31 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0011
+#    Time: 31 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000011
+#    Time: 36 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 36 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000100
+#    Time: 41 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0100
+#    Time: 41 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000100
+#    Time: 46 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 46 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000101
+#    Time: 51 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0101
+#    Time: 51 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000101
+#    Time: 56 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 56 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000110
+#    Time: 61 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0110
+#    Time: 61 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000110
+#    Time: 66 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 66 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000111
+#    Time: 71 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0111
+#    Time: 71 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000111
+#    Time: 76 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 76 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001000
+#    Time: 81 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1000
+#    Time: 81 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001000
+#    Time: 86 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 86 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001001
+#    Time: 91 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1001
+#    Time: 91 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001001
+#    Time: 96 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 96 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001010
+#    Time: 101 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1010
+#    Time: 101 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001010
+#    Time: 106 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 106 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001011
+#    Time: 111 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1011
+#    Time: 111 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001011
+#    Time: 116 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 116 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001100
+#    Time: 121 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1100
+#    Time: 121 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001100
+#    Time: 126 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 126 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001101
+#    Time: 131 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1101
+#    Time: 131 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001101
+#    Time: 136 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 136 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001110
+#    Time: 141 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1110
+#    Time: 141 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001110
+#    Time: 146 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 146 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00001111
+#    Time: 151 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 1111
+#    Time: 151 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00001111
+#    Time: 156 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 156 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000001
+#    Time: 171 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0001
+#    Time: 171 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000001
+#    Time: 176 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 176 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000010
+#    Time: 181 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0010
+#    Time: 181 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000010
+#    Time: 186 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 186 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# ** Error: Error: inputs = 00000011
+#    Time: 191 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 36
+# ** Error:  outputs = 0011
+#    Time: 191 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 37
+# ** Error: Error: inputs = 00000011
+#    Time: 196 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 43
+# ** Error:  outputs = 0000
+#    Time: 196 ps  Scope: switch_mux_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux_tb.sv Line: 44
+# Compile of switch_mux.sv was successful.
+# Compile of switch_mux_tb.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of switch_mux.sv was successful.
+# Compile of switch_mux_tb.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of switch_mux.sv was successful.
+# Compile of switch_mux_tb.sv failed with 5 errors.
+# 2 compiles, 1 failed with 5 errors.
+# Compile of sync.sv was successful.
+# Compile of sync_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.sync_tb
+# End time: 15:38:33 on Sep 19,2025, Elapsed time: 0:05:30
+# Errors: 72, Warnings: 11
+# vsim -gui -voptargs="+acc" work.sync_tb 
+# Start time: 15:38:33 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.sync_tb(fast)
+# Loading work.sync(fast)
+add wave -position end  sim:/sync_tb/clk
+add wave -position end  sim:/sync_tb/d
+add wave -position end  sim:/sync_tb/q
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlftxh9m8c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftxh9m8c
+run 200
+# ** Error: Error: async d not copied to q after 2 clock cycles
+#    Time: 20 ns  Scope: sync_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv Line: 19
+# ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv(20)
+#    Time: 20 ns  Iteration: 0  Instance: /sync_tb
+# Break in Module sync_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv line 20
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.sync_tb(fast)
+# Loading work.sync(fast)
+run 10
+wave zoom full
+# {0 ns} {11 ns}
+# Compile of sync.sv was successful.
+# Compile of sync_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+run 50
+# ** Error: Error: async d not copied to q after 2 clock cycles
+#    Time: 20 ns  Scope: sync_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv Line: 19
+# ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv(20)
+#    Time: 20 ns  Iteration: 0  Instance: /sync_tb
+# Break in Module sync_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv line 20
+run 100
+# Compile of sync.sv was successful.
+# Compile of sync_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+run 100
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
-# Loading work.shifter_tb(fast)
-# Loading work.shifter(fast)
+# Loading work.sync_tb(fast)
+# Loading work.sync(fast)
+run 30
+# ** Error: Error: async d not copied to q after 2 clock cycles
+#    Time: 25 ns  Scope: sync_tb File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv Line: 20
+# ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv(21)
+#    Time: 25 ns  Iteration: 0  Instance: /sync_tb
+# Break in Module sync_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv line 21
+# Compile of two_bit_demux.sv was successful.
+# Compile of two_bit_demux_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.two_bit_demux_tb
+# End time: 15:45:53 on Sep 19,2025, Elapsed time: 0:07:20
+# Errors: 1, Warnings: 6
+# vsim -gui -voptargs="+acc" work.two_bit_demux_tb 
+# Start time: 15:45:53 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.two_bit_demux_tb(fast)
+# Loading work.two_bit_demux(fast)
+add wave -position end  sim:/two_bit_demux_tb/clk
+add wave -position end  sim:/two_bit_demux_tb/reset
+add wave -position end  sim:/two_bit_demux_tb/enable
+add wave -position end  sim:/two_bit_demux_tb/control
+add wave -position end  sim:/two_bit_demux_tb/control_expected
+add wave -position end  sim:/two_bit_demux_tb/vectornum
+add wave -position end  sim:/two_bit_demux_tb/errors
+add wave -position end  sim:/two_bit_demux_tb/testvectors
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gdavis  Hostname: 5CJZ0R3  ProcessID: 6308
+#           Attempting to use alternate WLF file "./wlfty3gjx9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfty3gjx9
 run 200
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.two_bit_demux_tb(fast)
+# Loading work.two_bit_demux(fast)
+run 50
+run 10
+run80
+# invalid command name "run80"
+run 80
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.two_bit_demux_tb(fast)
+# Loading work.two_bit_demux(fast)
+run 60
 wave zoom full
-# {0 ps} {210 ps}
-# Compile of debouncer_tb.sv failed with 2 errors.
-# Compile of debouncer.sv was successful.
-# 2 compiles, 1 failed with 2 errors.
+# {0 ps} {63 ps}
+# Compile of scanner_fsm.sv was successful.
+# Compile of scanner_fsm_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.scanner_fsm_tb
+# End time: 15:48:52 on Sep 19,2025, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 6
+# vsim -gui -voptargs="+acc" work.scanner_fsm_tb 
+# Start time: 15:48:52 on Sep 19,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "scanner_fsm(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.scanner_fsm_tb(fast)
+# Loading work.scanner_fsm(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/scanner_fsm_tb/dut/enable', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /scanner_fsm_tb/dut File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv Line: 14
+# Error loading design
+# End time: 15:49:15 on Sep 19,2025, Elapsed time: 0:00:23
+# Errors: 1, Warnings: 2
+# Compile of scanner_fsm.sv was successful.
+# Compile of scanner_fsm_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.scanner_fsm_tb
+# vsim -gui -voptargs="+acc" work.scanner_fsm_tb 
+# Start time: 15:53:41 on Sep 19,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "scanner_fsm(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.scanner_fsm_tb(fast)
+# Loading work.scanner_fsm(fast)
+# Loading work.divider(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/scanner_fsm_tb/dut/enable', driven via a port connection, is multiply driven. See C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /scanner_fsm_tb/dut File: C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv Line: 14
+# Error loading design
+# End time: 15:54:04 on Sep 19,2025, Elapsed time: 0:00:23
+# Errors: 1, Warnings: 3
+# Compile of scanner_fsm.sv was successful.
+# Compile of scanner_fsm_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui -voptargs=+acc work.shifter_tb

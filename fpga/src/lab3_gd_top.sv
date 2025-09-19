@@ -11,7 +11,7 @@ module lab3_gd_top (
     output  logic   [3:0]   col_keys
 );
 
-    logic           button_pressed = 0;
+    logic           button_pressed = 0, clk;
     logic   [3:0]   q_row_keys, hex_R_out; 
     logic   [3:0]   hex_R = 4'b0010;
     logic   [3:0]   hex_L = 4'b0001;
@@ -20,7 +20,7 @@ module lab3_gd_top (
 	// Internal 48MHz high-speed oscillator
     HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
 
-    debounder_fsm debouncer_fsm(clk, reset, q_row_keys, hex_R_out, button_pressed, hex_R, hex_L);
+    debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, hex_R_out, button_pressed, hex_R, hex_L);
 	
     sync    sync(clk, row_keys, q_row_keys);
 

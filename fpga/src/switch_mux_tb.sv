@@ -7,14 +7,12 @@
 
 	`timescale 1ps/1ps //timescale <time_unit>/<time_precision>
 
-module switch_mux; 
-	
-	logic	clk;
-	logic	reset;
+module switch_mux_tb; 
 	
 	//input/output variables
     logic           enable;
-	logic	[3:0]   sA, sB, a, b;
+	logic	[3:0]   sA, sB;
+	int     		a, b;
 	logic   [3:0]   s;
 
 	//32 bit vectornum indicates the number of test vectors applied
@@ -25,29 +23,31 @@ module switch_mux;
 	switch_mux dut(enable, sA, sB, s); 
 
 	initial
-		for (a = 1'h0; a < 16; a = a + 1) begin
-			for(b = 1'h0; b < 16; b = b + 1)begin
+		errors = 0;
+
+		for (a = 0; a < 16; a = a + 1) begin
+			for(b = 0; b < 16; b = b + 1)begin
 
 				sA = a;
 				sB = b;
 				#1
 				enable = 0;
 				assert(s == sA) else begin
-					$display("Error: inputs = %b", {sA, sB}); 
-					$display(" outputs = %b", {s});
+					$error("Error: inputs = %b", {sA, sB}); 
+					$error(" outputs = %b", {s});
 					errors = errors + 1;
 				end
 				#5
 				enable = 1;
 				assert(s == sB) else begin
-					$display("Error: inputs = %b", {sA, sB}); 
-					$display(" outputs = %b", {s});
+					$error("Error: inputs = %b", {sA, sB}); 
+					$error(" outputs = %b", {s});
 					errors = errors + 1;
 				end
 				#4
 
 				if(a == 15 && b == 15)begin
-					$display("%d tests completed with %d errors", (a*b), errors);
+					$error("%d tests completed with %d errors", (a*b), errors);
 					$stop;
 				end
 			end
