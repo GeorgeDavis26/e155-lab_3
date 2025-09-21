@@ -4,6 +4,7 @@
 // 9/10/2025
 
 module lab3_gd_top (
+//    input   logic           clk, //uncomment for sims
     input   logic           reset,
     input   logic   [3:0]   row_keys,
     output  logic   [1:0]   control,

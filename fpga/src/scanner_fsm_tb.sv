@@ -15,6 +15,11 @@ module scanner_fsm_tb;
 
     scanner_fsm dut(clk, reset, button_pressed, col_keys);
 
+    always begin
+        clk <= 1; #5;
+        clk <= 0; #5;
+    end
+
     initial 
         begin
 
