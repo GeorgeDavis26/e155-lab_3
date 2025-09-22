@@ -16,7 +16,7 @@ module scanner_fsm_tb;
 
     scanner_fsm dut(.clk(clk), .reset(reset), .button_pressed(button_pressed), .col_keys(col_keys));
 
-    // task to check expected values of d0 and d1
+    // task to check expected values of state/nextstate and col_keys
     task check_state(
         input [3:0] exp_state, exp_nextstate,
         input string msg

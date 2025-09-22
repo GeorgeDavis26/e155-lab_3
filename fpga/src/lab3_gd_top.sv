@@ -19,9 +19,9 @@ module lab3_gd_top (
 
 
 	// Internal 48MHz high-speed oscillator
-    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk));
+    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk)); //TODO HSOSC test and top level tb
 
-    debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, button_pressed, new_hes hex_R, hex_L);
+    debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, button_pressed, new_hex, hex_R, hex_L); //TODO debouncer tb
 
     seg_storage_fsm seg_storage_fsm(new_hex, hex_R_new, hex_R, hex_L);
 	
@@ -31,6 +31,9 @@ module lab3_gd_top (
 
     keypad_decoder   keypad_decoder(q_row_keys, col_keys, hex_R_new);
    
-    multiplexed_seven_seg multiplexed_seven_seg(clk, hex_R, hex_L, control, seg); //display the two hex numbers stored
+    multiplexed_seven_seg multiplexed_seven_seg(clk, hex_R, hex_L, control, seg); //TODO switch mux tb
     
 endmodule
+
+
+//YOU GOT THIS!!!

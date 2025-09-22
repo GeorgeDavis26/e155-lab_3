@@ -92,6 +92,7 @@ module debouncer_fsm(
             IDLE:    button_pressed = 0;
             PRESSED: button_pressed = 1;
             DRIVE:   new_hex = 1;
+            HOLD:    new_hex = 0;
         endcase
     end
 endmodule

@@ -21,7 +21,6 @@ module scanner_fsm (
     // state register and asynchronous reset
     always_ff @(posedge clk, posedge reset) begin
         if (reset) state <= S0;
-//        else if (alarm) enable = 1;
         else begin
             state <= nextstate;
         end

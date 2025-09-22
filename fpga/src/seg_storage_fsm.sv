@@ -10,6 +10,8 @@ module seg_storage_fsm (
     output	logic	[3:0]   hex_R, hex_L
 );
 
+    logic   [3:0]   interm_hex_L, interm_hex_R, nextinterm_hex_L, nextinterm_hex_R;
+
     typedef enum logic [3:0] {IDLE, NEW_L, NEW_R, WAIT} statetype;
 	statetype state, nextstate;
 
@@ -18,8 +20,8 @@ module seg_storage_fsm (
     begin
         if (reset) begin
              state <= IDLE;
-             interm_hex_L <= 1'h0;
-             interm_hex_R <= 1'h0;
+             interm_hex_L <= 4'b0000;
+             interm_hex_R <= 4'b0000;
         end
         else begin
             state <= nextstate;
@@ -31,23 +33,46 @@ module seg_storage_fsm (
     //next state logic
     always_comb begin
         case(state)
-            IDLE:   if(new_hex)  nextstate = NEW; 
-                    else         nextstate = IDLE;
+            IDLE:   if(new_hex) begin
+                        nextstate = NEW_L;
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= interm_hex_R;
+                        end  
+                    else begin
+                        nextstate = IDLE;
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= interm_hex_R;
+                    end
             NEW_L:  begin 
-                        nextstate = NEW_R; 
-                        nextinterm_hex_L = hex_L; 
+                        nextstate <= NEW_R; 
+                        nextinterm_hex_L <= hex_L; // update new looping hex
+                        nextinterm_hex_R <= interm_hex_R;
                     end
             NEW_R:  begin 
                         nextstate = WAIT;
-                        nextinterm_hex_R = hex_R; 
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= hex_R; // update new looping hex
                     end
-            WAIT:   if(~new_hex) nextstate = IDLE;
-                    else         nextstate = WAIT;
-            default: nextstate = IDLE;
+            WAIT:   if(~new_hex) begin
+                        nextstate = IDLE;
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= interm_hex_R;
+                    end
+                    else begin 
+                        nextstate = WAIT;
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= interm_hex_R;
+                    end
+            default: begin 
+                        nextstate = IDLE;
+                        nextinterm_hex_L <= interm_hex_L;
+                        nextinterm_hex_R <= interm_hex_R;
+                    end
         endcase
     end
 
+    //output logic
     assign hex_L = (state == NEW_L) ? interm_hex_R : interm_hex_L;
-    assign hex_R = (state == NEW_R) ? new_R_hex : interm_hex_R;
+    assign hex_R = (state == NEW_R) ? hex_R_new : interm_hex_R;
 
 endmodule
