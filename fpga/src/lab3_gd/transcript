@@ -1077,3 +1077,5 @@ run 150
 # PASSED!: Output on NEW_L second time through -- got hex_R=6 =6 expected hex_R=6 hex_L=6 at time 104.
 # PASSED!: Output on NEW_R second time through -- got hex_R=9 =6 expected hex_R=9 hex_L=6 at time 116.
 # PASSED!: Output on WAIT second time through -- got hex_R=9 =6 expected hex_R=9 hex_L=6 at time 128.
+# End time: 01:17:09 on Sep 22,2025, Elapsed time: 0:42:48
+# Errors: 0, Warnings: 2
