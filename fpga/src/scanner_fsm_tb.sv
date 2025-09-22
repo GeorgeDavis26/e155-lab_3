@@ -1,6 +1,7 @@
 // scanner_fsm_tb.sv
 // testbench file for the scanner_fsm module 
 // George Davis
+// adapted from Troy Kauffman's Keypad tutorial testbench
 // gdavis@hmc.edu
 // 9/17/25
 
@@ -11,9 +12,22 @@ module scanner_fsm_tb;
 
     logic           clk, reset, button_pressed;
     logic   [3:0]   col_keys;
-    logic   [31:0]  errors;
 
-    scanner_fsm dut(clk, reset, button_pressed, col_keys);
+
+    scanner_fsm dut(.clk(clk), .reset(reset), .button_pressed(button_pressed), .col_keys(col_keys));
+
+    // task to check expected values of d0 and d1
+    task check_state(
+        input [3:0] exp_state, exp_nextstate,
+        input string msg
+        );
+        #1;
+        assert (dut.state == exp_state && dut.nextstate == exp_nextstate)
+            $display("PASSED!: %s -- got state=%h nextstate=%h expected state=%h nextstate=%h at time %0t.", msg, dut.state, dut.nextstate, exp_state, exp_nextstate, $time);
+        else
+            $error("FAILED!: %s --got state=%h nextstate=%h expected state=%h nextstate=%h at time %0t.", msg, dut.state, dut.nextstate, exp_state, exp_nextstate, $time);
+        #1;
+    endtask
 
     always begin
         clk <= 1; #5;
@@ -22,12 +36,112 @@ module scanner_fsm_tb;
 
     initial 
         begin
-
-            errors = 0;
-            ///////////////////////////////////////
+            reset = 1;
+            #22 reset = 0;
+            
+           ///////////////////////////////////////
             // next state and output logic tests //
             //////////////////////////////////////
 
+            // S0
+            wait(dut.enable == 0);
+            check_state(dut.S0, dut.S0, "Loop on S0");
+            wait(dut.enable == 1);
+            check_state(dut.S0,  dut.S0A, "Nextstate on S0 to S0A");
+
+            button_pressed = 1; #10 
+            check_state(dut.S0A, dut.S0A, "Loop on S0A back to S0A");
+            button_pressed = 0; #10 
+            check_state(dut.S0A, dut.S0B, "Nextstate on S0A to S0B");
+
+            wait(dut.enable == 1);
+            check_state(dut.S0B, dut.S0B, "Loop on S0B back to S0B");
+            wait(dut.enable == 0);
+            check_state(dut.S0B, dut.S1, "Nextstate on S0B to S1");
+
+/*/
+            // S1 AND S1A
+            wait(dut.enable == 0);
+            check_state(dut.S1, dut.S1, "Loop on S1");
+            wait(dut.enable == 1);
+            check_state(dut.S1,  dut.S1, "Nextstate on S1 to S1A");
+
+            wait(dut.enable == 0);
+            button_pressed = 1; #10
+            check_state(dut.S1A, dut.S1, "Loop on S1A back to S1");
+            
+            wait(dut.enable == 1);
+            button_pressed = 0; #1;
+            check_state(dut.S1A,  dut.S2, "Nextstate on S1A to S1");
+
+            // S2 AND S2A
+            wait(dut.enable == 0);
+            check_state(dut.S2, dut.S2, "Loop on S2");
+            wait(dut.enable == 1);
+            check_state(dut.S2,  dut.S2A, "Nextstate on S2 to S2A");
+
+            button_pressed = 1; #10
+            wait(dut.enable == 0);
+            check_state(dut.S2A, dut.S2, "Loop on S2A back to S2");
+            wait(dut.enable == 1);
+            button_pressed = 0; #1;
+            check_state(dut.S2A,  dut.S3, "Nextstate on S2A to S1");
+
+            // S3 AND S3A
+            wait(dut.enable == 0);
+            check_state(dut.S3, dut.S3, "Loop on S3");
+            wait(dut.enable == 1);
+            check_state(dut.S3,  dut.S3A, "Nextstate on S3 to S3A");
+
+            button_pressed = 1; #10
+            wait(dut.enable == 0);
+            check_state(dut.S3A, dut.S3, "Loop on S3A back to S3");
+            wait(dut.enable == 1);
+            button_pressed = 0; #1;
+            check_state(dut.S3A,  dut.S2, "Nextstate on S3A to S3");
+
+/*/
+
+
+/*
+            #50;
+
+            button_pressed = 1; #10
+            check_state(dut.S1, dut.S1, "Loop on S1");
+            button_pressed = 0; #1;
+            check_state(dut.S1,  dut.S2, "Nextstate on S1 to S2");
+            button_pressed = 1;
+
+            #50;
+
+            button_pressed = 1; #10
+            check_state(dut.S2, dut.S2, "Loop on S2");
+            button_pressed = 0; #1
+            check_state(dut.S2,  dut.S3, "Nextstate on S2 to S3");
+            button_pressed = 1;
+
+            #50;
+
+            button_pressed = 1; #10
+            check_state(dut.S3, dut.S3, "Loop on S3");
+            button_pressed = 0; #1
+            check_state(dut.S3,  dut.S0, "Nextstate on S3 to S0");
+            button_pressed = 1;
+*/
+            #50 $stop;
+        end
+    
+
+    // add a timeout
+    initial begin
+        #5000; // wait 5 us
+        $error("Simulation did not complete in time.");
+        $stop;
+    end
+endmodule
+
+
+/*
             // test default case to S0
             clk = 1; #1;
             assert(dut.nextstate == dut.S0) else begin
@@ -142,3 +256,5 @@ module scanner_fsm_tb;
         end        
 
 endmodule
+
+*/
