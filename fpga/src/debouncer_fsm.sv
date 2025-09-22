@@ -7,17 +7,17 @@
 
 module debouncer_fsm(
     input   logic           clk, reset,
-    input   logic   [3:0]   q_row_keys, hex_R_out,
-    output  logic           button_pressed,
-    output  logic   [3:0]   new_hex
+    input   logic   [3:0]   q_row_keys,
+    output  logic           button_pressed, new_hex
 );  
     logic   [3:0]   pressed_row, next_pressed_row;
 
-    typedef enum logic [3:0] {IDLE, PRESSED, STORE, WAIT, CHECK, DRIVE_L, DRIVE_R, HOLD} statetype;
+    typedef enum logic [3:0] {IDLE, PRESSED, STORE, WAIT, CHECK, DRIVE, HOLD} statetype;
 	statetype state, nextstate;
 
-    logic   alarm = 0;
+    logic   alarm;
     logic 	[31:0]	goal = 'd1200;
+//    logic 	[31:0]	goal = 'd5; //reduced for sims
 
     divider divider(clk, reset, goal, alarm);
 
@@ -49,8 +49,10 @@ module debouncer_fsm(
                         nextstate = STORE;
                         next_pressed_row = pressed_row;
                     end
-            STORE:      nextstate = WAIT;
+            STORE:  begin 
+                        nextstate = WAIT;
                         next_pressed_row = pressed_row;
+                    end
             WAIT:   if (alarm) begin 
                         nextstate = CHECK; //go to check state to ensure debouncing succeeded
                         next_pressed_row = pressed_row;
@@ -61,38 +63,34 @@ module debouncer_fsm(
                     end
             CHECK:  if (q_row_keys == pressed_row) begin
                         nextstate = DRIVE; //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
-                        next_pressed_row = presed_row;
+                        next_pressed_row = pressed_row;
                     end
                     else begin
                         nextstate = IDLE; //go back to idle if the debouncer failed
-                        next_pressed_row = presed_row;
+                        next_pressed_row = pressed_row;
                     end
             DRIVE:  begin 
                         nextstate = HOLD;
-                        next_pressed_row = presed_row;
+                        next_pressed_row = pressed_row;
                     end 
             HOLD:   if (q_row_keys == 4'b0000) begin
                         nextstate = IDLE; //go to IDLE if button is unpressed
-                        next_pressed_row = presed_row;
+                        next_pressed_row = pressed_row;
                     end
                     else begin 
                         nextstate = HOLD; // loop on hold if the button is still held
-                        next_pressed_row = presed_row;
+                        next_pressed_row = pressed_row;
                     end
-            default:    nextstate = IDLE;
-                        next_pressed_row = presed_row;
+            default:begin   nextstate = IDLE;
+                            next_pressed_row = pressed_row;
+                    end
         endcase
     end
 
 
     // new module that handles shifting R to L
+
     //output logic
-    always_comb begin
-        case(state)
-            IDLE:    button_pressed = 0;
-            PRESSED: button_pressed = 1;
-            DRIVE:   new_hex = 1;
-            HOLD:    new_hex = 0;
-        endcase
-    end
+    assign button_pressed = (state == IDLE) ? 0 : 1;
+    assign new_hex = (state == DRIVE) ? 1 : 0;
 endmodule

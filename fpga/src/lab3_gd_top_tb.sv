@@ -3,89 +3,10 @@
 // George Davis
 // gdavis@hmc.edu
 // 9/15/25
+//adapted from keypad testbench example from the course website
+//https://hmc-e155.github.io/tutorials/tutorial-posts/keypad-testbench/index.html
 
 `timescale 1 ns/1 ns
-
-module keypad_tb();
-    logic           clk;    // system clock
-    logic           reset;  // active high reset
-    tri     [3:0]   rows;   // 4-bit row input
-    tri     [3:0]   cols;   // 4-bit column output
-    logic   [3:0]   d0;     // new key
-    logic   [3:0]   d1;     // previous key
-
-    // matrix of key presses: keys[row][col]
-    logic [3:0][3:0] keys;
-
-    // dut
-    keypad dut(.clk(clk), .reset(reset), .rows(rows), .cols(cols), .d0(d0), .d1(d1));
-
-    // ensures rows = 4'b1111 when no key is pressed
-    pulldown(rows[0]);
-    pulldown(rows[1]);
-    pulldown(rows[2]);
-    pulldown(rows[3]);
-
-    // keypad model using tranif
-    genvar r, c;
-    generate
-        for (r = 0; r < 4; r++) begin : row_loop
-            for (c = 0; c < 4; c++) begin : col_loop
-                // when keys[r][c] == 1, connect cols[c] <-> rows[r]
-                tranif1 key_switch(rows[r], cols[c], keys[r][c]);
-            end
-        end
-    endgenerate
-
-    // generate clock
-    always begin
-        clk = 0; #5;
-        clk = 1; #5;
-    end
-
-    // task to check expected values of d0 and d1
-    task check_key(input [3:0] exp_d0, exp_d1, string msg);
-        #100;
-        assert (d0 == exp_d0 && d1 == exp_d1)
-            $display("PASSED!: %s -- got d0=%h d1=%h expected d0=%h d1=%h at time %0t.", msg, d0, d1, exp_d0, exp_d1, $time);
-        else
-            $error("FAILED!: %s -- got d0=%h d1=%h expected d0=%h d1=%h at time %0t.", msg, d0, d1, exp_d0, exp_d1, $time);
-        #50;
-    endtask
-
-    // apply stimuli and check outputs
-    initial begin
-        reset = 1;
-
-        // no key pressed
-        keys = '{default:0};
-
-        #22 reset = 0;
-
-        // press key at row=1, col=2
-        #50 keys[1][2] = 1;
-        check_key(4'h6, 4'h0, "First key press");
-
-        // release button
-        keys[1][2] = 0;
-
-        // press another key at row=0, col=0
-        keys[2][3] = 1;
-        check_key(4'hc, 4'h6, "Second key press");
-
-        // release buttons
-        #100 keys = '{default:0};
-
-        #100 $stop;
-    end
-
-    // add a timeout
-    initial begin
-        #5000; // wait 5 us
-        $error("Simulation did not complete in time.");
-        $stop;
-    end
-endmodule
 
 module lab3_gd_top_tb;
 
@@ -98,9 +19,30 @@ module lab3_gd_top_tb;
 
     logic   [31:0]  errors;
 
+    logic [3:0][3:0] keys;
+
+    genvar r, c;
+
     logic           clk; // only for sim
 
-    lab3_gd_top_tb dut(clk, reset, row_keys, control, seg, col_keys);
+    lab3_gd_top dut(clk, reset, row_keys, control, seg, col_keys);
+
+    // ensures cols = 4'b1111 when no key is pressed
+    pullup(cols[0]);
+    pullup(cols[1]);
+    pullup(cols[2]);
+    pullup(cols[3]);
+
+     // keypad model using tranif
+    genvar c, r;
+    generate
+        for (c = 0; c < 4; c++) begin : row_loop
+            for (r = 0; r < 4; r++) begin : col_loop
+                // when keys[c][r] == 1, connect cols[r] <-> rows[c]
+                tranif1 key_switch(cols[c], rows[r], keys[c][r]);
+            end
+        end
+    endgenerate
 
     //generates clock 
 
@@ -109,13 +51,45 @@ module lab3_gd_top_tb;
         clk <= 0; #5;
     end
 
+    // tasks to check expected values of seg when control = 0 (LEFT SEGMENT)
+    task check_key_0(input [3:0] expseg, string msg);
+        #100;
+        assert (seg == expseg)
+            $display("L PASSED!: %s -- got seg=%h expected seg=%h at time %0t.", msg, seg, , expseg, $time);
+        else
+            $error("L FAILED!:%s -- got seg=%h expected seg=%h at time %0t.", msg, seg, , expseg, $timee);
+        #50;
+    endtask
+
+    // tasks to check expected values of seg when control = 0 (LEFT SEGMENT)
+    task check_key_1(input [3:0] expseg, string msg);
+        #100;
+        assert (seg == exp_seg)
+            $display("R PASSED!: %s -- got seg=%h expected seg=%h at time %0t.", msg, seg, , expseg, $time);
+        else
+            $error("R FAILED!: %s -- got seg=%h expected seg=%h at time %0t.", msg, seg, , expseg, $time);
+        #50;
+    endtask
 
     initial
         begin
             errors = 0;
 			//Pulse reset to begin test
-			reset <= 1; # 22; reset <= 0;
+			reset <= 1; # 22; 
+            keys = '{default:0};
+            reset <= 0;
+
             
+            end
+            $error("Tests completed with %b errors", errors);
+            $stop;
+
+        end
+
+endmodule
+
+          
+/*/  
             // output seg tests with changing row_keys input
             row_keys = 4'b1000; // set to fourth row ie. output display should be 1
 
@@ -156,10 +130,4 @@ module lab3_gd_top_tb;
 
             assert(dut.clk == 1) else $error("ERROR: HSOSC not turning on"); errors = errors + 1;
 
-
-            $error("Tests completed with %b errors", errors);
-            $stop;
-
-        end
-
-endmodule
+/*/

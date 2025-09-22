@@ -10,13 +10,73 @@
 
 module debouncer_fsm_tb;
 
-    logic           clk, reset, button_pressed;
-    logic   [3:0]   q_row_keys, hex_R_out, hex_R, hex_L;
+    logic           clk, reset, button_pressed, new_hex;
+    logic   [3:0]   q_row_keys;
     logic   [31:0]  errors;
 	
 	
-    debouncer_fsm dut(clk, reset, q_row_keys, hex_R_out, button_pressed, hex_R, hex_L);
+    debouncer_fsm dut(clk, reset, q_row_keys, button_pressed, new_hex);
 
+    // task to check expected values of state/nextstate and col_keys
+    task check_state(
+        input [3:0] exp_state, exp_nextstate,
+        input string msg
+        );
+        #1;
+        assert (dut.state == exp_state && dut.nextstate == exp_nextstate)
+            $display("PASSED!: %s -- got state=%h nextstate=%h expected state=%h nextstate=%h at time %0t.", msg, dut.state, dut.nextstate, exp_state, exp_nextstate, $time);
+        else
+            $error("FAILED!: %s --got state=%h nextstate=%h expected state=%h nextstate=%h at time %0t.", msg, dut.state, dut.nextstate, exp_state, exp_nextstate, $time);
+        #1;
+    endtask
+
+    task check_output(
+        input        expbutton_pressed, expnew_hex,
+        input string msg
+        );
+        #1;
+        assert (button_pressed == expbutton_pressed && new_hex == expnew_hex)
+            $display("PASSED!: %s -- got button_pressed=%h and new_hex = %h expected button_pressed=%h new_hex = %h time %0t.", msg, button_pressed, new_hex, expbutton_pressed, expnew_hex, $time);
+        else
+            $error("FAILED!: %s -- got button_pressed=%h and new_hex = %h expected button_pressed=%h new_hex = %h time %0t.", msg, button_pressed, new_hex, expbutton_pressed, expnew_hex, $time);
+        #1;
+    endtask
+
+    always begin
+        clk <= 1; #5;
+        clk <= 0; #5;
+    end
+
+    initial 
+        begin
+            reset = 1;
+            #22 reset = 0;
+            
+           ///////////////////////////////////////
+            // next state and output logic tests //
+            //////////////////////////////////////
+
+            q_row_keys = 4'b1000;
+//            #10;
+//            q_row_keys = 4'b0100;
+            #100;
+            
+            wait(dut.alarm == 1);
+            #100;
+            q_row_keys = 4'b0000;
+            #50 $stop;
+
+
+        end
+    
+    // add a timeout
+    initial begin
+        #5000; // wait 5 us
+        $error("Simulation did not complete in time.");
+        $stop;
+    end
+
+/*/
     initial 
         begin
             errors = 0;
@@ -165,6 +225,6 @@ module debouncer_fsm_tb;
             clk = 0; #10;
 
 
-        end        
-
+        end      
+/*/
 endmodule

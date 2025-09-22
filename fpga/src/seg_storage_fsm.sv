@@ -34,12 +34,12 @@ module seg_storage_fsm (
     always_comb begin
         case(state)
             IDLE:   if(new_hex) begin
-                        nextstate = NEW_L;
+                        nextstate <= NEW_L;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= interm_hex_R;
                         end  
                     else begin
-                        nextstate = IDLE;
+                        nextstate <= IDLE;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= interm_hex_R;
                     end
@@ -49,22 +49,22 @@ module seg_storage_fsm (
                         nextinterm_hex_R <= interm_hex_R;
                     end
             NEW_R:  begin 
-                        nextstate = WAIT;
+                        nextstate <= WAIT;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= hex_R; // update new looping hex
                     end
             WAIT:   if(~new_hex) begin
-                        nextstate = IDLE;
+                        nextstate <= IDLE;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= interm_hex_R;
                     end
                     else begin 
-                        nextstate = WAIT;
+                        nextstate <= WAIT;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= interm_hex_R;
                     end
             default: begin 
-                        nextstate = IDLE;
+                        nextstate <= IDLE;
                         nextinterm_hex_L <= interm_hex_L;
                         nextinterm_hex_R <= interm_hex_R;
                     end
