@@ -18,7 +18,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>../../impl_1/lab3_gd_impl_1.bin</File>
-			<FileTime>09/22/25 13:46:44</FileTime>
+			<FileTime>09/22/25 16:42:16</FileTime>
 			<JedecChecksum>0x27A7</JedecChecksum>
 			<MemoryType>External SPI Flash Memory (SPI FLASH)</MemoryType>
 			<Operation>Erase,Program,Verify</Operation>

@@ -4,22 +4,23 @@
 // 9/10/2025
 
 module lab3_gd_top (
-//    input   logic           clk, //uncomment for sims
+    input   logic           clk, //uncomment for sims
     input   logic           reset,
     input   logic   [3:0]   row_keys,
     output  logic   [1:0]   control,
 	output	logic   [6:0]   seg,
+    output  logic   [3:0]   hex_R, hex_L, //uncomment for sims
     output  logic   [3:0]   col_keys
 );
 
-    logic           button_pressed, clk;
+//    logic           clk;
+    logic           button_pressed;
     logic   [3:0]   q_row_keys, hex_R_out; 
-    logic   [3:0]   hex_R = 4'b0010;
-    logic   [3:0]   hex_L = 4'b0001;
+//    logic   [3:0]   hex_R, hex_L;
 
 
 	// Internal 48MHz high-speed oscillator
-    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk)); 
+//    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk)); 
 
     debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, button_pressed, new_hex);
 

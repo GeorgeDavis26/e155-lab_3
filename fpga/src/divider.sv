@@ -9,7 +9,7 @@ module divider (
     output  logic 			alarm
 );
 	
-	logic	[31:0]	counter = 0;
+	logic	[31:0]	counter;
 
 	always_ff @(posedge clk, posedge reset)
 		begin

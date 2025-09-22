@@ -14,7 +14,7 @@ module scanner_fsm (
     logic   enable;
     logic 	[31:0]	goal;
 
-    assign goal = 'd5;
+    assign goal = 'd500;
 
     divider divider(clk, reset, goal, enable);
 
