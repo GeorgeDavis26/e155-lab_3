@@ -1450,3 +1450,5 @@ run 20000
 # ** Note: $stop    : C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv(131)
 #    Time: 192 ps  Iteration: 0  Instance: /scanner_fsm_tb
 # Break in Module scanner_fsm_tb at C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv line 131
+# End time: 17:22:48 on Sep 21,2025, Elapsed time: 0:03:14
+# Errors: 1, Warnings: 3
