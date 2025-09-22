@@ -40,23 +40,23 @@ module scanner_fsm (
             S1: if (enable) nextstate = S1A;
                 else nextstate = S1;
             S1A: if (~button_pressed) nextstate = S1B;
-                else nextstate = S1;
+                else nextstate = S1A;
             S1B: if (~enable) nextstate = S2;
-                else nextstate = S1A;     
+                else nextstate = S1B;     
 
             S2: if (enable) nextstate = S2A;
                 else nextstate = S2;
             S2A: if (~button_pressed) nextstate = S2B;
-                else nextstate = S2;
+                else nextstate = S2A;
             S2B: if (~enable) nextstate = S3;
-                else nextstate = S2A;     
+                else nextstate = S2B;     
 
             S3: if (enable) nextstate = S3A;
                 else nextstate = S3;
             S3A: if (~button_pressed) nextstate = S3B;
-                else nextstate = S3;
+                else nextstate = S3A;
             S3B: if (~enable) nextstate = S0;
-                else nextstate = S3A;     
+                else nextstate = S3B;     
 
             default: nextstate = S0;
         endcase
@@ -67,11 +67,22 @@ module scanner_fsm (
 
     always_comb begin
         case(state)
-            S0:         col_keys = 4'b0001;
-            S1:         col_keys = 4'b0010;
-            S2:         col_keys = 4'b0100;
-            S3:         col_keys = 4'b1000;
-            default:    col_keys = 4'b0001;
+            S0:          col_keys = 4'b0001;
+            S0A:         col_keys = 4'b0001;
+            S0B:         col_keys = 4'b0001;
+
+            S1:          col_keys = 4'b0010;
+            S1A:         col_keys = 4'b0010;
+            S1B:         col_keys = 4'b0010;
+
+            S2:          col_keys = 4'b0100;
+            S2A:         col_keys = 4'b0100;
+            S2B:         col_keys = 4'b0100;
+
+            S3:          col_keys = 4'b1000;
+            S3A:         col_keys = 4'b1000;
+            S3B:         col_keys = 4'b1000;
+            default:     col_keys = 4'b0001;
         endcase
     end
 

@@ -7,7 +7,7 @@ module sync_tb;
  	logic 		clk;
  	logic [3:0] d, q;
 
-    logic [31:0] errors, testnum;
+    logic [31:0] cycnum;
 
     sync dut(clk, d, q);
 
@@ -17,21 +17,12 @@ module sync_tb;
 			clk <= 1; # 5; clk <= 0; # 5;
 		end
 
-    initial
-        begin
-            errors = 0;
-            testnum = 0;
-            d = 4'b1010; //non-trivial assigment to d to check output 
-
-            always @(negegde clk) begin
-                if (testnum == 4) $stop;
-                else if(testnum == 0)
-                    assert(q == 0) else $error("Error: async d not copied to q after 2 clock cycles");
-                else if(testnum == 1)
-                    assert(q == 0) else $error("Error: async d not copied to q after 2 clock cycles");
-                else if(testnum == 2)
-                    assert(q == d) else $error("Error: async d not copied to q after 2 clock cycles");
-                else testnum = testnum + 1;
-            end
-        end
+    always @(posedge clk) begin
+        if (cycnum == 0) begin d = 4'b1010; cycnum = cycnum + 1; end
+        else if (cycnum == 1) begin cycnum = cycnum + 1; end
+        else if (cycnum == 2) begin assert(dut.n1 == 4'b1010) else $error("Error: n1 not picking up d"); cycnum = cycnum + 1; end
+        else if (cycnum == 3) begin assert(d == 4'b1010) else $error("Error: d not picking up n1");  cycnum = cycnum + 1; end
+        else if (cycnum == 4) begin $display("Tests complete with"); $stop; end
+        else    cycnum = 0;
+    end
 endmodule

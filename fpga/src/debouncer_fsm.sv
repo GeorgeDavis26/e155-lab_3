@@ -9,7 +9,7 @@ module debouncer_fsm(
     input   logic           clk, reset,
     input   logic   [3:0]   q_row_keys, hex_R_out,
     output  logic           button_pressed,
-    output  logic   [3:0]   hex_R, hex_L
+    output  logic   [3:0]   new_hex
 );  
     logic   [3:0]   pressed_row, next_pressed_row;
 
@@ -45,8 +45,10 @@ module debouncer_fsm(
                         nextstate = IDLE; //loop since no button was pressed
                         next_pressed_row =  4'b0000;
                     end
-            PRESSED:    nextstate = STORE;
+            PRESSED:begin 
+                        nextstate = STORE;
                         next_pressed_row = pressed_row;
+                    end
             STORE:      nextstate = WAIT;
                         next_pressed_row = pressed_row;
             WAIT:   if (alarm) begin 
@@ -58,17 +60,17 @@ module debouncer_fsm(
                         next_pressed_row = pressed_row;
                     end
             CHECK:  if (q_row_keys == pressed_row) begin
-                        nextstate = DRIVE_L; //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
+                        nextstate = DRIVE; //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
                         next_pressed_row = presed_row;
                     end
                     else begin
                         nextstate = IDLE; //go back to idle if the debouncer failed
                         next_pressed_row = presed_row;
                     end
-            DRIVE_L:    nextstate = DRIVE_R;
+            DRIVE:  begin 
+                        nextstate = HOLD;
                         next_pressed_row = presed_row;
-            DRIVE_R:    nextstate = HOLD;
-                        next_pressed_row = presed_row;
+                    end 
             HOLD:   if (q_row_keys == 4'b0000) begin
                         nextstate = IDLE; //go to IDLE if button is unpressed
                         next_pressed_row = presed_row;
@@ -89,8 +91,7 @@ module debouncer_fsm(
         case(state)
             IDLE:    button_pressed = 0;
             PRESSED: button_pressed = 1;
-            DRIVE_L: hex_L = hex_R; 
-            DRIVE_R: hex_R = hex_R_out;
+            DRIVE:   new_hex = 1;
         endcase
     end
 endmodule

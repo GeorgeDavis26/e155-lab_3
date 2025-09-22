@@ -1,0 +1,1 @@
+C:/lscc/radiant/2024.2/questasim/win64/VisualizerRls/bin/viscom.exe -nolock -quiet -jmem_size 393216 work.divider work.scanner_fsm work.scanner_fsm_tb -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt2 -id 1-00be43eaec8a-68d0c392-3c4-fb0 +__design_bin_path+C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd +__betafsm
