@@ -1,22 +1,66 @@
 m255
 K4
 z2
-Z0 !s12c _opt2
+Z0 !s12c _opt
 Z1 !s99 nomlopt
 R0
 R1
 R0
 R1
-Z2 !s12c _opt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt2
+R1
+R2
 R1
 R2
 R1
 R0
+R1
+R0
+R1
+R2
 R1
 Z3 !s12c _opt1
 R1
 R3
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 R2
 R1
 R2
@@ -25,57 +69,49 @@ R2
 R1
 R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
-R1
-R0
+R2
 R1
 R3
 R1
@@ -97,41 +133,41 @@ R3
 R1
 R3
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
-R2
+R0
 R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
@@ -141,6 +177,21 @@ R1
 !i10f 100
 cModel Technology
 Z4 dC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd
+T_opt
+!s110 1758610401
+V5RCoW4e5oKMDnQKoV^_`G1
+Z5 04 14 4 work lab3_gd_top_tb fast 0
+=23-00be43eaec8a-68d243e0-33d-4008
+R1
+Z6 !s12f OEM25U12 
+Z7 !s12b OEM100
+Z8 !s124 OEM100
+Z9 !s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc -L iCE40UP
+Z10 tCvgOpt 0
+n@_opt
+Z11 OL;O;2024.2;79
+R4
 T_opt1
 !s110 1758580787
 V39^:;X8GD7FQ2S0Z:_@`z1
@@ -148,70 +199,70 @@ V39^:;X8GD7FQ2S0Z:_@`z1
 =2-00be43eaec8a-68d1d033-100-5128
 R1
 !s12f OEM25U1 
-Z5 !s12b OEM100
-Z6 !s124 OEM100
-Z7 !s135 nogc
-Z8 o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
-Z9 tCvgOpt 0
+R7
+R8
+R9
+Z12 o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
+R10
 n@_opt1
-Z10 OL;O;2024.2;79
+R11
 R4
 T_opt2
 !s110 1758595188
 V=U9S;0BWaYU<<;DO^lzCT0
-04 14 4 work lab3_gd_top_tb fast 0
+R5
 =1-00be43eaec8a-68d20873-3a8-474c
 R1
-!s12f OEM25U12 
-R5
 R6
 R7
 R8
 R9
-n@_opt2
+R12
 R10
+n@_opt2
+R11
 R4
 vdebouncer_fsm
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv
-Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z12 !s110 1758599964
+Z13 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z14 !s110 1758611107
 !i10b 1
-!s100 Q4P4S6]E^@3N`W13DY2:71
-ISIX1BFDgAzm_LSYkYlXg_1
+!s100 FlmZb[[:MYnGgJA982TT?2
+I4Sil3@MUc_B_1L`NnAXPb1
 S1
-Z13 dC:/Users/gdavis/Desktop/e155-lab_3/fpga/src
-w1758593494
+Z15 dC:/Users/gdavis/Desktop/e155-lab_3/fpga/src
+w1758610186
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv
-!i122 400
-L0 8 88
-Z14 VDg1SIo80bB@j0V0VzS_@n1
-Z15 OL;L;2024.2;79
+!i122 806
+L0 8 83
+Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z17 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z16 !s108 1758599964.000000
+Z18 !s108 1758611107.000000
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv|
 !i113 0
-Z17 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R9
+Z19 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R10
 vdebouncer_fsm_tb
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm_tb.sv
-R11
+R13
 !s110 1758587795
 !i10b 1
 !s100 zZZWmlRGGinGXciN]KDeB3
 In3zI^BVOkZDS^o9nFfHj>2
 S1
-R13
+R15
 w1758570078
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm_tb.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm_tb.sv
 !i122 259
 L0 11 220
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
@@ -219,199 +270,199 @@ r1
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm_tb.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vdivider
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 R6C52oNDzkc;n<O[;?TFg2
 I<N1Ieo8G^Uc<1S9aS25E13
 S1
-R13
+R15
 w1758580136
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv
-!i122 399
+!i122 805
 L0 6 22
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vkeypad_decoder
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 D^RI;oQ>zL9BU^Q9SAEjV2
 IFZbePi`aceN_I@PcEdH`E3
 S1
-R13
-w1758592341
+R15
+w1758609405
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv
-!i122 398
+!i122 804
 L0 7 44
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vkeypad_tb
-Z18 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
-R11
-R12
-!i10b 1
-!s100 az_LbmKh8WSW3DJFGlB[I1
-I_KPRl8GJB@3mcN@6cZXe=1
-S1
+Z20 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
 R13
-w1758599911
-Z19 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
-Z20 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
-!i122 401
-L0 3 74
-R14
+!s110 1758601256
+!i10b 1
+!s100 jO2A0:6Id]Yc`A02gH?@52
+I[DFSLlRVb7lzU=1A_g:1g1
+S1
 R15
+w1758601130
+Z21 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
+Z22 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
+!i122 493
+L0 3 78
+R16
+R17
 r1
 !s85 0
 31
-R16
-Z21 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv|
-Z22 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv|
+!s108 1758601256.000000
+Z23 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv|
+Z24 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vlab3_gd_top
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv
-R11
-R12
-!i10b 1
-!s100 ;40>CkTo]Z@Lj<]Bd4=e42
-I^Z=GD5Zc;c<];;7Z>PaV]1
-S1
 R13
-w1758598246
+R14
+!i10b 1
+!s100 T0@Vh7=0VJ]:Ck=c53INX3
+I3MCdldK9:;Y_GDiNW`6`^1
+S1
+R15
+w1758610854
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv
-!i122 397
+!i122 803
 L0 6 34
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv|
 !i113 0
-R17
-R9
-vlab3_gd_top_tb
-R18
-R11
-!s110 1758595332
-!i10b 1
-!s100 9=YY@8jE9hW<[ZNJE^a;j0
-IJJcd_RV?clm;2^Tg=imXM2
-S1
-R13
-w1758595310
 R19
+R10
+vlab3_gd_top_tb
 R20
-!i122 342
-L0 11 91
+R13
 R14
+!i10b 1
+!s100 C0`=]OW;?lm]5a]PN6eF40
+IDQnWTDl@5BiZ@zo_NkRoz1
+S1
 R15
+w1758607809
+R21
+R22
+!i122 802
+L0 3 82
+R16
+R17
 r1
 !s85 0
 31
-!s108 1758595332.000000
-R21
-R22
+R18
+R23
+R24
 !i113 0
-R17
-R9
+R19
+R10
 vmultiplexed_seven_seg
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 l]B02T>M<]Q[;TEG8KJdV0
 IA6CZf3Ida^onN4=K2@ehP0
 S1
-R13
+R15
 w1758312914
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv
-!i122 396
+!i122 801
 L0 7 34
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vscanner_fsm
-Z23 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
-R11
-R12
-!i10b 1
-!s100 0WkXc3?i_LbDcaQ1`8kGa3
-IZ9TMLaVz70]d9W;4SESCU0
-S1
+Z25 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
 R13
-w1758596056
-Z24 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
-Z25 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
-!i122 395
-L0 6 78
 R14
+!i10b 1
+!s100 92]_SHe@8Y86dEfHVX?J`3
+IC:1jEkgjANMc<BPIC4fE22
+S1
 R15
+w1758610789
+Z26 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
+Z27 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
+!i122 800
+L0 6 75
+R16
+R17
 r1
 !s85 0
 31
-R16
-Z26 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv|
-Z27 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv|
+R18
+Z28 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv|
+Z29 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vscanner_fsm_tb
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv
-R11
+R13
 !s110 1758516059
 !i10b 1
 !s100 QIbOPgNVGT[P7dEK>YHoH1
 IAC7[maNUAIT<@UGlWeILa3
 S1
-R13
+R15
 w1758516056
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv
 !i122 70
 L0 11 146
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
@@ -419,75 +470,75 @@ r1
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm_tb.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vscanner_fsmB
-R23
-R11
+R25
+R13
 !s110 1758587287
 !i10b 1
 !s100 PnGWgfHmMOdC1;e<eN_a]3
 I;jD_YkRUhG0EHG2eh^LbN0
 S1
-R13
+R15
 w1758585946
-R24
-R25
+R26
+R27
 !i122 240
 L0 6 83
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
 !s108 1758587287.000000
-R26
-R27
+R28
+R29
 !i113 0
-R17
-R9
+R19
+R10
 nscanner_fsm@b
 vseg_storage_fsm
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 B`UiAz5_=KK3CLCnnC68z2
 I5[k;az80D]1[jMEIaM?0z1
 S1
-R13
-w1758593598
+R15
+w1758608244
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv
-!i122 394
+!i122 799
 L0 6 85
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vseg_storage_fsm_tb
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv
-R11
+R13
 !s110 1758528697
 !i10b 1
 !s100 WkARVM^35IMF`?3kjzX_e2
 I95GcHnTMZYH>d[RmPKT1>0
 S1
-R13
+R15
 w1758528691
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv
 !i122 185
 L0 11 92
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
@@ -495,99 +546,99 @@ r1
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vseven_seg_disp
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 b[?<N>zVcP[AFbf;Y>]Oj2
 I@3zG=6i2z04CH_Se1iaRd2
 S1
-R13
-w1758588633
+R15
+w1758608064
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv
-!i122 393
+!i122 798
 L0 6 29
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vswitch_mux
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 <J0[OhzQTgj`L3_fd[<z]1
 IeISKLXY]:NWD6KDLLAR343
 S1
-R13
+R15
 w1758572785
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv
-!i122 392
+!i122 797
 L0 7 10
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vsync
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 on7z@ni]KH`:9L=^J3;Yh1
 IK^TChd5Vzg]9nfo6^QJ0Y0
 S1
-R13
+R15
 w1758512104
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv
-!i122 391
+!i122 796
 L0 6 14
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vsync_tb
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv
-R11
+R13
 !s110 1758519145
 !i10b 1
 !s100 g<bQ5z]EgQ[TM_ib;bWH52
 IWUOl?6jo:l7;kQO:kHF7@2
 S1
-R13
+R15
 w1758519139
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv
 !i122 118
 L0 5 24
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
@@ -595,30 +646,30 @@ r1
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync_tb.sv|
 !i113 0
-R17
-R9
+R19
+R10
 vtwo_bit_demux
 2C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv
-R11
-R12
+R13
+R14
 !i10b 1
 !s100 7nZZ7lMG?PhAUMMc@6S>Y2
 IfW0n79I0OZLThgLIcO[?81
 S1
-R13
+R15
 w1758572741
 8C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv
 FC:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv
-!i122 390
+!i122 795
 L0 6 7
-R14
-R15
+R16
+R17
 r1
 !s85 0
 31
-R16
+R18
 !s107 C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv|
 !i113 0
-R17
-R9
+R19
+R10

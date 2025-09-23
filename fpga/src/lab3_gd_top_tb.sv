@@ -1,12 +1,13 @@
 `timescale 1 ns/1 ns
 
-module keypad_tb();
-    logic           clk;    // system clock
-    logic           reset;  // active high reset
+module lab3_gd_top_tb();
+    logic           rst;  // active high rst
     tri     [3:0]   row_keys;   // 4-bit row input
+    logic   [1:0]   control; 
+    logic   [6:0]   seg;
     tri     [3:0]   col_keys;   // 4-bit column output
-    logic   [3:0]   d0;     // new key
-    logic   [3:0]   d1;     // previous key
+
+    logic   [3:0]   exp_hex_R, exp_hex_L;
 
     // matrix of key presses: keys[row][col]
     logic [3:0][3:0] keys;
@@ -32,33 +33,40 @@ module keypad_tb();
     endgenerate
 
     // task to check expected values of d0 and d1
-    task check_key(input [3:0] exp_hex_R, exp_hex_L, string msg);
-        #100;
+    task check_key(
+        input [3:0] exp_hex_R, exp_hex_L, 
+        input string msg
+        );
+        #150;
         assert (dut.hex_R == exp_hex_R && dut.hex_L == exp_hex_L)
-            $display("PASSED!: %s -- got hex_R=%h hex_L=%h expected hex_R=%h hex_L=%h at time %0t.", msg, hex_R, hex_L, exp_hex_R, exp_hex_L, $time);
+            $display("PASSED!: %s -- got hex_R=%h hex_L=%h expected hex_R=%h hex_L=%h at time %0t.", msg, dut.hex_R, dut.hex_L, exp_hex_R, exp_hex_L, $time);
         else
-            $error("FAILED!: %s -- got hex_R=%h hex_L=%h expected hex_R=%h hex_L=%h at time %0t.", msg, hex_R, hex_L, exp_hex_R, exp_hex_L, $time);
+            $error("FAILED!: %s -- got hex_R=%h hex_L=%h expected hex_R=%h hex_L=%h at time %0t.", msg, dut.hex_R, dut.hex_L, exp_hex_R, exp_hex_L, $time);
         #50;
     endtask
 
     // apply stimuli and check outputs
     initial begin
-        reset = 1;
+        rst = 0;
 
         // no key pressed
         keys = '{default:0};
 
-        #22 reset = 0;
+        #22 rst = 1;
 
         // press key at row=1, col=2
-        #50 keys[1][2] = 1;
-        check_key(4'h6, 4'h0, "First key press");
+        #50;
+
+        keys[1][2] = 1;
+        wait(dut.debouncer_fsm.alarm == 1);
+        check_key(4'h6, 4'h0, "First key press");// takes 150 ns
 
         // release button
         keys[1][2] = 0;
 
         // press another key at row=0, col=0
         keys[2][3] = 1;
+        wait(dut.debouncer_fsm.alarm == 1);
         check_key(4'hc, 4'h6, "Second key press");
 
         // release buttons
@@ -69,7 +77,7 @@ module keypad_tb();
 
     // add a timeout
     initial begin
-        #5000; // wait 5 us
+        #50000; // wait 50 us
         $error("Simulation did not complete in time.");
         $stop;
     end

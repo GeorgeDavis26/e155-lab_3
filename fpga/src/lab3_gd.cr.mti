@@ -61,6 +61,13 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	keypad_decoder
 
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top_tb.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module lab3_gd_top_tb
+
+Top level modules:
+	lab3_gd_top_tb
+
 } {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module multiplexed_seven_seg

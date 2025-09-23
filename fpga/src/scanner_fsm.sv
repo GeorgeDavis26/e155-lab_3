@@ -8,7 +8,7 @@ module scanner_fsm (
     output	logic	[3:0]   col_keys
 );
 
-    typedef enum logic [4:0] {S0, S0A, S0B, S0C, S0D, S1, S1A, S1B, S1C, S1D, S2,  S2A, S2B, S2C, S2D, S3, S3A, S3B, S3C, S3D} statetype;
+    typedef enum logic [3:0] {S0A, S0B, S0C, S0D, S1A, S1B, S1C, S1D, S2A, S2B, S2C, S2D, S3A, S3B, S3C, S3D} statetype;
 	statetype state, nextstate;
 
     // state register and asynchronous reset
@@ -24,32 +24,29 @@ module scanner_fsm (
         case(state)
             //S0A: if (~button_pressed) nextstate = S0B;
                  //else   nextstate = S0A;
-            S0:  nextstate = S0A;
+                 
             S0A: nextstate = S0B;
             S0B: nextstate = S0C;
             S0C: nextstate = S0D;
-            S0D: if (~button_pressed) nextstate = S1;
+            S0D: if (~button_pressed) nextstate = S1A;
                  else nextstate = S0D;
 
-            S1:  nextstate = S1A;
             S1A: nextstate = S1B;
             S1B: nextstate = S1C;
             S1C: nextstate = S1D;
-            S1D: if (~button_pressed) nextstate = S2;
+            S1D: if (~button_pressed) nextstate = S2A;
                  else nextstate = S1D;
 
-            S2:  nextstate = S2A;
             S2A: nextstate = S2B;
             S2B: nextstate = S2C;
             S2C: nextstate = S2D;
-            S2D: if (~button_pressed) nextstate = S3;
+            S2D: if (~button_pressed) nextstate = S3A;
                  else nextstate = S2D;
 
-            S3:  nextstate = S3A;
             S3A: nextstate = S3B;
             S3B: nextstate = S3C;
             S3C: nextstate = S3D;
-            S3D: if (~button_pressed) nextstate = S0;
+            S3D: if (~button_pressed) nextstate = S0A;
                  else nextstate = S3D;
         endcase
     end
