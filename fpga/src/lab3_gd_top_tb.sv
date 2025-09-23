@@ -37,7 +37,7 @@ module lab3_gd_top_tb();
         input [3:0] exp_hex_R, exp_hex_L, 
         input string msg
         );
-        #150;
+        #175;
         assert (dut.hex_R == exp_hex_R && dut.hex_L == exp_hex_L)
             $display("PASSED!: %s -- got hex_R=%h hex_L=%h expected hex_R=%h hex_L=%h at time %0t.", msg, dut.hex_R, dut.hex_L, exp_hex_R, exp_hex_L, $time);
         else

@@ -46,14 +46,14 @@ module debouncer_fsm(
                         next_pressed_row =  4'b0000;
                     end
             WAIT:   if (alarm) begin 
-                        nextstate = DRIVE; //go to check state to ensure debouncing succeeded
+                        nextstate = CHECK; //go to check state to ensure debouncing succeeded
                         next_pressed_row = pressed_row;
                     end
                     else begin 
                         nextstate = WAIT;
                         next_pressed_row = pressed_row;
                     end
-/*/
+
             CHECK:  if (q_row_keys == pressed_row) begin
                         nextstate = DRIVE; //check to make sure the key hasn't changed ie. debouncing wasn't from a phantom press
                         next_pressed_row = pressed_row;
@@ -62,7 +62,7 @@ module debouncer_fsm(
                         nextstate = IDLE; //go back to idle if the debouncer failed
                         next_pressed_row = pressed_row;
                     end
-/*/
+
             DRIVE:  begin 
                         nextstate = HOLD;
                         next_pressed_row = pressed_row;
