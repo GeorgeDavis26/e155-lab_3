@@ -4,27 +4,29 @@
 // 9/10/2025
 
 module lab3_gd_top (
-    input   logic           clk, //uncomment for sims
-    input   logic           reset,
+    input   logic           rst,
     input   logic   [3:0]   row_keys,
     output  logic   [1:0]   control,
 	output	logic   [6:0]   seg,
-    output  logic   [3:0]   hex_R, hex_L, //uncomment for sims
     output  logic   [3:0]   col_keys
 );
 
-//    logic           clk;
-    logic           button_pressed;
-    logic   [3:0]   q_row_keys, hex_R_out; 
-//    logic   [3:0]   hex_R, hex_L;
+    logic           clk;
+    logic           button_pressed, new_hex;
+    logic   [3:0]   q_row_keys, hex_R_out, hex_R_new; 
+    logic   [3:0]   hex_R, hex_L;
+
+    logic           reset;
+    
+    assign reset = ~rst;
 
 
 	// Internal 48MHz high-speed oscillator
-//    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk)); 
+    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(clk)); //works
 
-    debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, button_pressed, new_hex);
+    debouncer_fsm debouncer_fsm(clk, reset, q_row_keys, button_pressed, new_hex); //
 
-    seg_storage_fsm seg_storage_fsm(new_hex, hex_R_new, hex_R, hex_L);
+    seg_storage_fsm seg_storage_fsm(clk, reset, new_hex, hex_R_new, hex_R, hex_L);
 	
     sync    sync(clk, row_keys, q_row_keys);
 
@@ -32,7 +34,7 @@ module lab3_gd_top (
 
     keypad_decoder   keypad_decoder(q_row_keys, col_keys, hex_R_new);
    
-    multiplexed_seven_seg multiplexed_seven_seg(clk, hex_L, hex_R, control, seg);
+    multiplexed_seven_seg multiplexed_seven_seg(clk, hex_R, hex_L, control, seg);
     
 endmodule
 

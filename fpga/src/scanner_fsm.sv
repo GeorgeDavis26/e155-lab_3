@@ -8,19 +8,12 @@ module scanner_fsm (
     output	logic	[3:0]   col_keys
 );
 
-    typedef enum logic [3:0] {S0, S1, S2, S3, S0A, S1A, S2A, S3A, S0B, S1B, S2B, S3B} statetype;
+    typedef enum logic [4:0] {S0, S0A, S0B, S0C, S0D, S1, S1A, S1B, S1C, S1D, S2,  S2A, S2B, S2C, S2D, S3, S3A, S3B, S3C, S3D} statetype;
 	statetype state, nextstate;
-
-    logic   enable;
-    logic 	[31:0]	goal;
-
-    assign goal = 'd500;
-
-    divider divider(clk, reset, goal, enable);
 
     // state register and asynchronous reset
     always_ff @(posedge clk, posedge reset) begin
-        if (reset) state <= S0;
+        if (reset) state <= S0A;
         else begin
             state <= nextstate;
         end
@@ -29,59 +22,61 @@ module scanner_fsm (
     //next state logic
     always_comb begin
         case(state)
-            S0: if (enable) nextstate = S0A;
-                else nextstate = S0;
-            S0A: if (~button_pressed) nextstate = S0B;
-                else nextstate = S0A;
-            S0B: if (~enable) nextstate = S1;
-                else nextstate = S0B;       
+            //S0A: if (~button_pressed) nextstate = S0B;
+                 //else   nextstate = S0A;
+            S0:  nextstate = S0A;
+            S0A: nextstate = S0B;
+            S0B: nextstate = S0C;
+            S0C: nextstate = S0D;
+            S0D: if (~button_pressed) nextstate = S1;
+                 else nextstate = S0D;
 
-            S1: if (enable) nextstate = S1A;
-                else nextstate = S1;
-            S1A: if (~button_pressed) nextstate = S1B;
-                else nextstate = S1A;
-            S1B: if (~enable) nextstate = S2;
-                else nextstate = S1B;     
+            S1:  nextstate = S1A;
+            S1A: nextstate = S1B;
+            S1B: nextstate = S1C;
+            S1C: nextstate = S1D;
+            S1D: if (~button_pressed) nextstate = S2;
+                 else nextstate = S1D;
 
-            S2: if (enable) nextstate = S2A;
-                else nextstate = S2;
-            S2A: if (~button_pressed) nextstate = S2B;
-                else nextstate = S2A;
-            S2B: if (~enable) nextstate = S3;
-                else nextstate = S2B;     
+            S2:  nextstate = S2A;
+            S2A: nextstate = S2B;
+            S2B: nextstate = S2C;
+            S2C: nextstate = S2D;
+            S2D: if (~button_pressed) nextstate = S3;
+                 else nextstate = S2D;
 
-            S3: if (enable) nextstate = S3A;
-                else nextstate = S3;
-            S3A: if (~button_pressed) nextstate = S3B;
-                else nextstate = S3A;
-            S3B: if (~enable) nextstate = S0;
-                else nextstate = S3B;     
-
-            default: nextstate = S0;
+            S3:  nextstate = S3A;
+            S3A: nextstate = S3B;
+            S3B: nextstate = S3C;
+            S3C: nextstate = S3D;
+            S3D: if (~button_pressed) nextstate = S0;
+                 else nextstate = S3D;
         endcase
     end
 
 
     // output logic
-
     always_comb begin
         case(state)
-            S0:          col_keys = 4'b0001;
             S0A:         col_keys = 4'b0001;
             S0B:         col_keys = 4'b0001;
+            S0C:         col_keys = 4'b0001;
+            S0D:         col_keys = 4'b0001;
 
-            S1:          col_keys = 4'b0010;
             S1A:         col_keys = 4'b0010;
             S1B:         col_keys = 4'b0010;
+            S1C:         col_keys = 4'b0010;
+            S1D:         col_keys = 4'b0010;
 
-            S2:          col_keys = 4'b0100;
             S2A:         col_keys = 4'b0100;
             S2B:         col_keys = 4'b0100;
+            S2C:         col_keys = 4'b0100;
+            S2D:         col_keys = 4'b0100;
 
-            S3:          col_keys = 4'b1000;
             S3A:         col_keys = 4'b1000;
             S3B:         col_keys = 4'b1000;
-            default:     col_keys = 4'b0001;
+            S3C:         col_keys = 4'b1000;
+            S3D:         col_keys = 4'b1000;
         endcase
     end
 

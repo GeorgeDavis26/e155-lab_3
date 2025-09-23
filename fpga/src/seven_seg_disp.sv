@@ -26,7 +26,7 @@ module seven_seg_disp (
 			4'b1101:    seg_state = 7'b0100001; //Display Hex D 
 			4'b1110:    seg_state = 7'b0000110; //Display Hex E
 			4'b1111:    seg_state = 7'b0001110; //Display Hex F 
-			default:    seg_state = 7'b1111111; //Default to all LEDs off
+			default:    seg_state = 7'b1000000; //Default to all LEDs off
     endcase
 	end
 

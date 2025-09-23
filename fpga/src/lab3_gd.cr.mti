@@ -1,9 +1,51 @@
-C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm_tb.sv
+C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/lab3_gd_top.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module seg_storage_fsm_tb
+-- Compiling module lab3_gd_top
 
 Top level modules:
-	seg_storage_fsm_tb
+	lab3_gd_top
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/scanner_fsm.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module scanner_fsm
+
+Top level modules:
+	scanner_fsm
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/divider.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module divider
+
+Top level modules:
+	divider
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/two_bit_demux.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module two_bit_demux
+
+Top level modules:
+	two_bit_demux
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/switch_mux.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module switch_mux
+
+Top level modules:
+	switch_mux
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/sync.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module sync
+
+Top level modules:
+	sync
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seven_seg_disp.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module seven_seg_disp
+
+Top level modules:
+	seven_seg_disp
 
 } {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/seg_storage_fsm.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
@@ -11,5 +53,26 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 
 Top level modules:
 	seg_storage_fsm
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/keypad_decoder.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module keypad_decoder
+
+Top level modules:
+	keypad_decoder
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/multiplexed_seven_seg.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module multiplexed_seven_seg
+
+Top level modules:
+	multiplexed_seven_seg
+
+} {} {}} C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/gdavis/Desktop/e155-lab_3/fpga/src/debouncer_fsm.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module debouncer_fsm
+
+Top level modules:
+	debouncer_fsm
 
 } {} {}}

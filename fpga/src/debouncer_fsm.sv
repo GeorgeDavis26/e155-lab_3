@@ -16,8 +16,7 @@ module debouncer_fsm(
 	statetype state, nextstate;
 
     logic   alarm;
-    logic 	[31:0]	goal = 'd1200;
-//    logic 	[31:0]	goal = 'd5; //reduced for sims
+    logic 	[31:0]	goal = 'd4800;
 
     divider divider(clk, reset, goal, alarm);
 

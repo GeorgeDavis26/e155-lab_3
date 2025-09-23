@@ -10,11 +10,23 @@ module seg_storage_fsm (
     output	logic	[3:0]   hex_R, hex_L
 );
 
-    logic   [3:0]   interm_hex_L, interm_hex_R, nextinterm_hex_L, nextinterm_hex_R;
+//    logic   [3:0]   interm_hex_L, interm_hex_R, nextinterm_hex_L, nextinterm_hex_R;
 
-    typedef enum logic [3:0] {IDLE, NEW_L, NEW_R, WAIT} statetype;
-	statetype state, nextstate;
+//    typedef enum logic [3:0] {IDLE, NEW_L, NEW_R, WAIT} statetype;
+//	statetype state, nextstate;
 
+    always_ff @(posedge clk, posedge reset)
+    begin
+        if (reset) begin
+             hex_R <= 4'b0000;
+             hex_L <= 4'b0000;
+        end
+        else if(new_hex) begin
+            hex_L <= hex_R;
+            hex_R <= hex_R_new;
+        end
+    end
+/*/
     // state register and asynchronous reset
     always_ff @(posedge clk, posedge reset)
     begin
@@ -74,5 +86,5 @@ module seg_storage_fsm (
     //output logic
     assign hex_L = (state == NEW_L) ? interm_hex_R : interm_hex_L;
     assign hex_R = (state == NEW_R) ? hex_R_new : interm_hex_R;
-
+/*/
 endmodule
